@@ -7,26 +7,24 @@ import ReactDOM from 'react-dom'
 
 const list = (
     <ul>
-      <li>List item 1</li>
-      <li>List item 2</li>
-      <li>List item 3</li>
-      <li>List item 4</li>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
     </ul>
-  );
+)
 
 const title = (
     <h1 id="test">
         <span>Hello React!!!</span>
     </h1>
-);
+)
 
 const el = (
     <div>
-      {title}
-      {list}
+        {title}
+        {list}
     </div>
-  );
+)
 
- 
-
-ReactDOM.render(el, document.getElementById("root"));
+ReactDOM.render(el, document.getElementById('root'))
