@@ -1,30 +1,36 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// const el = React.createElement("h1",null,"Hello Reeact.js")
+const Text = () => {
+    return (
+        <>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Pariatur ab assumenda earum explicabo. Earum beatae magni aut
+                aspernatur assumenda asperiores iure rerum porro unde molestiae
+                quis, in corrupti pariatur error?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Pariatur ab assumenda earum explicabo. Earum beatae magni aut
+                aspernatur assumenda asperiores iure rerum porro unde molestiae
+                quis, in corrupti pariatur error?
+            </p>
+        </>
+    )
+}
 
-// JSX
+const Title = () => {
+    return <h1>Hello React component</h1>
+}
 
-const list = (
-    <ul>
-        <li>List item 1</li>
-        <li>List item 2</li>
-        <li>List item 3</li>
-        <li>List item 4</li>
-    </ul>
-)
+const App = () => {
+    return (
+        <>
+            <Title />
+            <Text />
+        </>
+    )
+}
 
-const title = (
-    <h1 id="test">
-        <span>Hello React!!!</span>
-    </h1>
-)
-
-const el = (
-    <div>
-        {title}
-        {list}
-    </div>
-)
-
-ReactDOM.render(el, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
