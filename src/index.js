@@ -20,15 +20,19 @@ const Text = () => {
     )
 }
 
-const Title = () => {
-    return <h1>Hello React component</h1>
+const Title = (props) => {
+    console.log(props)
+    return <h1>Hello {props.name}</h1>
 }
 
 const App = () => {
     return (
         <>
-            <Title />
+            <Title name="Jack" />
             <Text />
+            <Title name="Oleg" />
+            <Title name="Test" />
+            <Title name="React.js" />
         </>
     )
 }
