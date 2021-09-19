@@ -3,9 +3,9 @@ import Container from '@mui/material/Container'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
+import Menu from './Menu/Menu'
 
 const Header = () => {
     return (
@@ -29,7 +29,7 @@ const Header = () => {
                         >
                             Fake Shop
                         </Typography>
-                        <Button color="inherit">Home</Button>
+                        <Menu />
                     </Toolbar>
                 </Container>
             </AppBar>
