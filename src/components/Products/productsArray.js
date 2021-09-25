@@ -51,7 +51,7 @@ const productsArray = [
         type: 'phone',
         capacity: 256,
         price: 800,
-        image: '/images/se-black.png',
+        // image: '/images/se-black.png',
     },
 ]
 

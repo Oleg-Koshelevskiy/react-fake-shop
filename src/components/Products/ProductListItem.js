@@ -43,6 +43,7 @@ ProductListItem.propTypes = {
 
 ProductListItem.defaultProps = {
     description: 'No description ...',
+    image: '/images/no-image.jpg',
 }
 
 export default ProductListItem
