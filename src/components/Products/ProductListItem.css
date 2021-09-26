@@ -17,3 +17,10 @@
     height: 150px;
     width: auto;
 }
+.product-quantity {
+    display: flex;
+    margin-top: 10px;
+}
+.product-quantity input {
+    text-align: center;
+}

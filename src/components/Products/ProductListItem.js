@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import { Button, CardActions } from '@mui/material'
+import { Button, CardActions, TextField } from '@mui/material'
 import './ProductListItem.css'
 import PropTypes from 'prop-types'
 
@@ -24,6 +24,11 @@ const ProductListItem = ({
                 <div className="product-features">Type:{type}</div>
                 <div className="product-price">Capacity:{capacity}Gb</div>
                 <div className="product-price">Price:{price}$</div>
+                <div className="product-quantity">
+                    <Button variant="outlined">-</Button>
+                    <TextField variant="outlined" size="small" value={1} />
+                    <Button variant="outlined">+</Button>
+                </div>
             </CardContent>
             <CardActions className="wrap-btn-add-to-cart">
                 <Button variant="contained">Add to Cart</Button>
