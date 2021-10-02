@@ -23,12 +23,6 @@ const ProductListItem = ({
         setCount(count + 1)
     }
 
-    const [color, setColor] = useState('green')
-
-    const changeColor = () => {
-        setColor((value) => (value === 'red' ? 'green' : 'red'))
-    }
-
     return (
         <Card>
             <CardContent>
@@ -40,19 +34,19 @@ const ProductListItem = ({
                 <div className="product-features">Type:{type}</div>
                 <div className="product-price">Capacity:{capacity}Gb</div>
                 <div className="product-price">Price:{price}$</div>
-                <p>Color: {color}</p>
-                <button onClick={() => changeColor()}>Change color</button>
                 <div className="product-quantity">
                     <Button
-                        variant="outlined"
+                        variant="contained"
                         onClick={() => onDecrementClick()}
+                        disabled={count <= 1}
                     >
                         -
                     </Button>
                     <TextField variant="outlined" size="small" value={count} />
                     <Button
-                        variant="outlined"
+                        variant="contained"
                         onClick={() => onIncrementClick()}
+                        disabled={count >= 10}
                     >
                         +
                     </Button>
