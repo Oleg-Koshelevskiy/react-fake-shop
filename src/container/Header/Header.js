@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import Menu from './Menu/Menu'
+import CartHeader from '../../components/Cart/CartHeader'
 
 const Header = () => {
     return (
@@ -30,6 +31,7 @@ const Header = () => {
                             Fake Shop
                         </Typography>
                         <Menu />
+                        <CartHeader />
                     </Toolbar>
                 </Container>
             </AppBar>
