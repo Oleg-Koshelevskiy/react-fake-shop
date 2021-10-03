@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     },
 })
 
-const ProductsList = () => {
+const ProductsList = ({ addProductToCart }) => {
     const classes = useStyles()
 
     return (
@@ -50,6 +50,7 @@ const ProductsList = () => {
                                 capacity={capacity}
                                 price={price}
                                 image={image}
+                                addProductToCart={addProductToCart}
                             />
                         </Grid>
                     )
