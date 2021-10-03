@@ -1,13 +1,18 @@
-import React from 'react'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import React, { useState } from 'react'
+import CssBaseline from '@mui/material/CssBaseline'
 import Header from './Header/Header'
 import Main from './Main/Main'
 
 const App = () => {
+    const [cartData, setCartData] = useState({
+        totalCount: 0,
+        totalPrice: 0,
+    })
+
     return (
         <>
             <CssBaseline />
-            <Header />
+            <Header cartData={cartData} />
             <Main />
         </>
     )
