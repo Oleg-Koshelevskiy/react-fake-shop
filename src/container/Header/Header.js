@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Menu from './Menu/Menu'
 import CartHeader from '../../components/Cart/CartHeader'
 
-const Header = ({ cartData }) => {
+const Header = ({ productsInCart }) => {
     return (
         <>
             <AppBar position="static">
@@ -31,10 +31,7 @@ const Header = ({ cartData }) => {
                             Fake Shop
                         </Typography>
                         <Menu />
-                        <CartHeader
-                            totalPrice={cartData.totalPrice}
-                            totalCount={cartData.totalCount}
-                        />
+                        <CartHeader productsInCart={productsInCart} />
                     </Toolbar>
                 </Container>
             </AppBar>
