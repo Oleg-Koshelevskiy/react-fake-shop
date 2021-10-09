@@ -10,11 +10,10 @@ const App = () => {
     })
 
     const addProductToCart = (id, count) =>
-        setProductsInCart((prevState) =>
-            Object.assign({}, prevState, {
-                [id]: (prevState[id] || 0) + count,
-            })
-        )
+        setProductsInCart((prevState) => ({
+            ...prevState,
+            [id]: (prevState[id] || 0) + count,
+        }))
 
     return (
         <>
