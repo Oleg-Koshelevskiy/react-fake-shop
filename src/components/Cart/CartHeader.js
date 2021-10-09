@@ -16,11 +16,15 @@ console.log(productsArray)
 const CartHeader = ({ productsInCart }) => {
     return (
         <div>
-            {keys(productsInCart).map((productId) => (
-                <div key={productId}>
-                    {productObject[productId].name} :{productsInCart[productId]}
-                </div>
-            ))}
+            <div>
+                {keys(productsInCart).map((productId) => (
+                    <div key={productId}>
+                        {productObject[productId].name} :
+                        {productsInCart[productId]}
+                    </div>
+                ))}
+            </div>
+            <div>Total:</div>
         </div>
     )
 }
