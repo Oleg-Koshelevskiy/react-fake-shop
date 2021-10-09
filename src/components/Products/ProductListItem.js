@@ -6,6 +6,7 @@ import './ProductListItem.css'
 import PropTypes from 'prop-types'
 
 const ProductListItem = ({
+    id,
     name,
     description,
     type,
@@ -56,7 +57,7 @@ const ProductListItem = ({
             <CardActions className="wrap-btn-add-to-cart">
                 <Button
                     variant="contained"
-                    onClick={() => addProductToCart(count, price)}
+                    onClick={() => addProductToCart(id, count)}
                 >
                     Add to Cart
                 </Button>
