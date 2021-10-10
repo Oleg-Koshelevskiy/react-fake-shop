@@ -8,14 +8,22 @@ const Main = ({ addProductToCart }) => {
     return (
         <>
             <Container maxWidth="lg">
-                <Switch>
+                {/* <Switch>
                     <Route path="/" exact>
                         <ProductsList addProductToCart={addProductToCart} />
                     </Route>
                     <Route path="/cart" exact>
                         <CartPage />
                     </Route>
-                </Switch>
+                </Switch> */}
+                <Route path="/cart" exact component={CartPage} />
+                <Route
+                    path="/"
+                    exact
+                    render={() => (
+                        <ProductsList addProductToCart={addProductToCart} />
+                    )}
+                />
             </Container>
         </>
     )
