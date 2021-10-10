@@ -1,6 +1,8 @@
 import React from 'react'
+import { keys } from 'lodash'
 import Typography from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles'
+import productsArray from '../../components/Products/productsArray'
 
 const useStyles = makeStyles({
     title: {
@@ -8,7 +10,16 @@ const useStyles = makeStyles({
         textTransform: 'uppercase',
     },
 })
-const CartPage = () => {
+
+const productObject = productsArray.reduce(
+    (object, product) => ({
+        ...object,
+        [product.id]: product,
+    }),
+    {}
+)
+
+const CartPage = ({ productsInCart }) => {
     const classes = useStyles()
     return (
         <>
@@ -20,6 +31,26 @@ const CartPage = () => {
             >
                 Cart
             </Typography>
+            <div>
+                {keys(productsInCart).map((productId) => (
+                    <div key={productId}>
+                        {productObject[productId].name} :
+                        {productsInCart[productId]} :{' '}
+                        {productObject[productId].price}
+                    </div>
+                ))}
+            </div>
+            <div>
+                Total:{' '}
+                {keys(productsInCart).reduce(
+                    (total, productId) =>
+                        total +
+                        productObject[productId].price *
+                            productsInCart[productId],
+                    0
+                )}
+                $
+            </div>
         </>
     )
 }
