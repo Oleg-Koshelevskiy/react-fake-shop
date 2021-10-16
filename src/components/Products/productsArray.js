@@ -1,5 +1,3 @@
-import { array } from 'prop-types'
-
 const productsArray = [
     {
         id: 1,
