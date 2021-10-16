@@ -2,7 +2,10 @@ import React from 'react'
 import { keys } from 'lodash'
 import Typography from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles'
-import productsArray from '../../components/Products/productsArray'
+import productsArray, {
+    getProductsObject,
+} from '../../components/Products/productsArray'
+import CartTotal from '../../components/Cart/CartTotal'
 
 const useStyles = makeStyles({
     title: {
@@ -19,7 +22,10 @@ const productObject = productsArray.reduce(
     {}
 )
 
-const CartPage = ({ productsInCart }) => {
+const CartPage = ({
+    productsInCart,
+    productObject = getProductsObject(productsArray),
+}) => {
     const classes = useStyles()
     return (
         <>
@@ -40,17 +46,7 @@ const CartPage = ({ productsInCart }) => {
                     </div>
                 ))}
             </div>
-            <div>
-                Total:{' '}
-                {keys(productsInCart).reduce(
-                    (total, productId) =>
-                        total +
-                        productObject[productId].price *
-                            productsInCart[productId],
-                    0
-                )}
-                $
-            </div>
+            <CartTotal productsInCart={productsInCart} />
         </>
     )
 }

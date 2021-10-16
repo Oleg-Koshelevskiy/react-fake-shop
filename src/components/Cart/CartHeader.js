@@ -1,19 +1,12 @@
 import React from 'react'
 import { keys } from 'lodash'
-import productsArray from '../Products/productsArray'
+import productsArray, { getProductsObject } from '../Products/productsArray'
+import CartTotal from './CartTotal'
 
-const productObject = productsArray.reduce(
-    (object, product) => ({
-        ...object,
-        [product.id]: product,
-    }),
-    {}
-)
-
-console.log(productObject)
-console.log(productsArray)
-
-const CartHeader = ({ productsInCart }) => {
+const CartHeader = ({
+    productsInCart,
+    productObject = getProductsObject(productsArray),
+}) => {
     return (
         <div>
             <div>
@@ -24,17 +17,7 @@ const CartHeader = ({ productsInCart }) => {
                     </div>
                 ))}
             </div>
-            <div>
-                Total:{' '}
-                {keys(productsInCart).reduce(
-                    (total, productId) =>
-                        total +
-                        productObject[productId].price *
-                            productsInCart[productId],
-                    0
-                )}
-                $
-            </div>
+            <CartTotal productsInCart={productsInCart} />
         </div>
     )
 }

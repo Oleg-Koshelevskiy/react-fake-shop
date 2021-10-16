@@ -1,8 +1,10 @@
+import { array } from 'prop-types'
+
 const productsArray = [
     {
         id: 1,
         name: 'iPhone XS',
-        // description: 'This is iPhone XS',
+        description: 'This is iPhone XS',
         type: 'phone',
         capacity: 64,
         price: 500,
@@ -29,7 +31,7 @@ const productsArray = [
     {
         id: 4,
         name: 'iPhone 8',
-        // description: 'This is iPhone 8',
+        description: 'This is iPhone 8',
         type: 'phone',
         capacity: 32,
         price: 250,
@@ -51,8 +53,17 @@ const productsArray = [
         type: 'phone',
         capacity: 256,
         price: 800,
-        // image: '/images/se-black.png',
+        image: '/images/se-black.png',
     },
 ]
+
+export const getProductsObject = (array) =>
+    array.reduce(
+        (object, product) => ({
+            ...object,
+            [product.id]: product,
+        }),
+        {}
+    )
 
 export default productsArray
