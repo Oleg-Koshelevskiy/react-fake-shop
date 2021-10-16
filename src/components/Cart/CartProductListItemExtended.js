@@ -1,6 +1,7 @@
-import { Card, CardContent, Grid } from '@mui/material'
+import { Button, Card, CardContent, Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import React from 'react'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const useStyles = makeStyles({
     media: {
@@ -30,6 +31,9 @@ const CartProductListItemExtended = ({ product, productCount }) => {
                     <div>{product.name}</div>
                     <p>Price for one item: {product.price}</p>
                     <p>Count: {productCount}</p>
+                    <Button variant="outlined">
+                        <DeleteIcon />
+                    </Button>
                 </CardContent>
             </Card>
         </Grid>
