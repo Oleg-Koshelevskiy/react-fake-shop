@@ -1,22 +1,11 @@
 import React from 'react'
-import { keys } from 'lodash'
-import productsArray, { getProductsObject } from '../Products/productsArray'
 import CartTotal from './CartTotal'
+import CartProductList from './CartProductList'
 
-const CartHeader = ({
-    productsInCart,
-    productObject = getProductsObject(productsArray),
-}) => {
+const CartHeader = ({ productsInCart }) => {
     return (
         <div>
-            <div>
-                {keys(productsInCart).map((productId) => (
-                    <div key={productId}>
-                        {productObject[productId].name} :
-                        {productsInCart[productId]}
-                    </div>
-                ))}
-            </div>
+            <CartProductList productsInCart={productsInCart} />
             <CartTotal productsInCart={productsInCart} />
         </div>
     )
