@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     },
 })
 
-const CartPage = ({ productsInCart }) => {
+const CartPage = ({ productsInCart, removeProductFromCart }) => {
     const classes = useStyles()
     return (
         <>
@@ -29,6 +29,7 @@ const CartPage = ({ productsInCart }) => {
                 <CartProductList
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtended}
+                    removeProductFromCart={removeProductFromCart}
                 />
             </Grid>
 
