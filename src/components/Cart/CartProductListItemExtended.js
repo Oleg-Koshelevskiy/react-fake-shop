@@ -2,6 +2,7 @@ import { Button, Card, CardContent, Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete'
+import Quantity from '../Quantity/Quantity'
 
 const useStyles = makeStyles({
     media: {
@@ -13,12 +14,16 @@ const useStyles = makeStyles({
         display: 'flex',
         padding: 15,
     },
+    btnRemove: {
+        marginTop: 20,
+    },
 })
 
 const CartProductListItemExtended = ({
     product,
     productCount,
     removeProductFromCart,
+    changeProductQuantity,
 }) => {
     const classes = useStyles()
     return (
@@ -35,7 +40,17 @@ const CartProductListItemExtended = ({
                     <div>{product.name}</div>
                     <p>Price for one item: {product.price}</p>
                     <p>Count: {productCount}</p>
+                    <Quantity
+                        count={productCount}
+                        onDecrementClick={() =>
+                            changeProductQuantity(product.id, productCount - 1)
+                        }
+                        onIncrementClick={() =>
+                            changeProductQuantity(product.id, productCount + 1)
+                        }
+                    />
                     <Button
+                        className={classes.btnRemove}
                         onClick={() => removeProductFromCart(product.id)}
                         variant="outlined"
                     >
