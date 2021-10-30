@@ -5,6 +5,7 @@ import CartTotal from '../../components/Cart/CartTotal'
 import CartProductList from '../../components/Cart/CartProductList'
 import CartProductListItemExtended from '../../components/Cart/CartProductListItemExtended'
 import { Grid } from '@mui/material'
+import { connect } from 'react-redux'
 
 const useStyles = makeStyles({
     title: {
@@ -42,4 +43,9 @@ const CartPage = ({
         </>
     )
 }
-export default CartPage
+
+const mapStateToProps = (state) => ({
+    productsInCart: state.productsInCart,
+})
+
+export default connect(mapStateToProps)(CartPage)
