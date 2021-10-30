@@ -5,6 +5,9 @@ import { Button, CardActions } from '@mui/material'
 import './ProductListItem.css'
 import PropTypes from 'prop-types'
 import Quantity from '../Quantity/Quantity'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import { connect } from 'react-redux'
 
 const ProductListItem = ({
     id,
@@ -15,6 +18,7 @@ const ProductListItem = ({
     price,
     image,
     addProductToCart,
+    isLiked = false,
 }) => {
     const [count, setCount] = useState(1)
 
@@ -32,6 +36,9 @@ const ProductListItem = ({
                 <div className="product-img">
                     <img src={image} alt="" />
                 </div>
+                <Button variant="outlined">
+                    {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+                </Button>
                 <h4>{name}</h4>
                 <p>{description}</p>
                 <div className="product-features">Type:{type}</div>
@@ -70,4 +77,8 @@ ProductListItem.defaultProps = {
     image: '/images/no-image.jpg',
 }
 
-export default ProductListItem
+const mapStateToProps = (state, { id }) => ({
+    isLiked: state[id],
+})
+
+export default connect(mapStateToProps)(ProductListItem)
