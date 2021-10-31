@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles'
 import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete'
 import Quantity from '../Quantity/Quantity'
+import { connect } from 'react-redux'
 
 const useStyles = makeStyles({
     media: {
@@ -68,4 +69,18 @@ const CartProductListItemExtended = ({
     )
 }
 
-export default CartProductListItemExtended
+const mapDispatchToProps = (dispatch) => ({
+    removeProductFromCart: (id) =>
+        dispatch({
+            type: 'REMOVE_PRODUCT_FROM_CART',
+            id,
+        }),
+    changeProductQuantity: (id, count) =>
+        dispatch({
+            type: 'CHANGE_PRODUCT_QUANTITY',
+            id,
+            count,
+        }),
+})
+
+export default connect(null, mapDispatchToProps)(CartProductListItemExtended)

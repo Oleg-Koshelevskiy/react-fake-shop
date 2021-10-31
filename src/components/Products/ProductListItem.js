@@ -87,6 +87,12 @@ const mapStateToProps = (state, { id }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
+    addProductToCart: (id, count) =>
+        dispatch({
+            type: 'ADD_PRODUCT_TO_CART',
+            id,
+            count,
+        }),
     addLike: (id) =>
         dispatch({
             type: 'LIKE',
