@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router'
 import CartPage from '../../pages/CartPage/CartPage'
 import ShippingPage from '../../pages/ShippingPage/ShippingPage'
 import PaymentPage from '../../pages/PaymentPage/PaymentPage'
+import CheckoutPage from '../../pages/CheckoutPage/CheckoutPage'
 
 const Main = ({
     addProductToCart,
@@ -31,6 +32,9 @@ const Main = ({
                     </Route>
                     <Route path="/payment" exact>
                         <PaymentPage />
+                    </Route>
+                    <Route path="/checkout" exact>
+                        <CheckoutPage />
                     </Route>
                 </Switch>
             </Container>

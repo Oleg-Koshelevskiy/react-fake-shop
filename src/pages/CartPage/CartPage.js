@@ -6,6 +6,7 @@ import CartProductList from '../../components/Cart/CartProductList'
 import CartProductListItemExtended from '../../components/Cart/CartProductListItemExtended'
 import { Grid } from '@mui/material'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
     title: {
@@ -40,6 +41,7 @@ const CartPage = ({
             </Grid>
 
             <CartTotal productsInCart={productsInCart} />
+            <Link to="/checkout">Proceed to checkout</Link>
         </>
     )
 }
